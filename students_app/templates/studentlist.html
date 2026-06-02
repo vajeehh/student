@@ -1,0 +1,7 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+{% for s in students %}
+    <p>{{ s.user.username }} - {{ s.user.email }} - {{ s.course }}</p>
+{% endfor %}
+{% endblock %}

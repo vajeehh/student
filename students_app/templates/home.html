@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>🎓 SMS</h1>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'create_student' %}">Add Student</a>
+            <a href="{% url 'list' %}">View Students</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2>Welcome to Student Management System</h2>
+        <p>Manage students easily and efficiently</p>
+        <a href="{% url 'create_student' %}"><button>Add Student</button></a>
+    </div>                                 
+    {% block content%}
+    {% endblock%}
+    <!-- Features -->
+    <div class="features">
+     
+        <div class="card">
+            <h3>📋 Manage Students</h3>
+            <p>Add, update and delete student records.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Fast & Easy</h3>
+            <p>Simple interface for quick access.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Secure</h3>
+            <p>Your data is safe and protected.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 Student Management System | All Rights Reserved</p>
+    </div>
+
+</body>
+</html>

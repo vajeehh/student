@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+
+<div class="form-container">
+    <div class="form-box">
+        <h2>✨ Create Student</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="section">
+                <h3>User Info</h3>
+                {{ user_form.as_p }}
+            </div>
+
+            <div class="section">
+                <h3>Student Info</h3>
+
+                {{ student_form.as_p }}
+
+                <!-- ✅ Dropdown HERE -->
+                
+            </div>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

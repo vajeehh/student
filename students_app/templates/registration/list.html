@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+
+<div class="students-container">
+    
+    <div class="header">
+        <h2>🎓 Students List</h2>
+        <a href="{% url 'create_student' %}" class="add-btn">+ Add Student</a>
+    </div>
+
+    <div class="students-box">
+        {% for s in students %}
+            <div class="student-card">
+                <div class="info">
+                    <h3>{{ s.user.username }}</h3>
+                    <p>Email:{{ s.user.email }}</p>
+                    <p>📘 Course: {{ s.course }}</p>
+                </div>
+
+               <div class="actions">
+    <a href="/accounts/delete/{{ s.id }}/" 
+       class="delete-btn"
+       onclick="return confirm('Are you sure you want to delete this student?');">
+       Delete
+    </a>
+</div>
+            </div>
+        {% empty %}
+            <p class="no-data">No students available</p>
+        {% endfor %}
+      
+    </div>
+
+</div>
+
+
+{% endblock %}
